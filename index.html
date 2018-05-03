@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calcScale - Angelo Pili</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.css" />
+    <style type="text/css">
+        html body {
+            font-family: 'Arial';
+            font-size: 12px;
+        }
+        html body h2 {
+            font-size: 30px;
+            font-weight: bold;
+            padding: 20px;
+            margin-bottom: 20px;
+            
+        }
+        .box {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        #normal_div {
+            background: rgb(223, 95, 63); 
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Example for YouTube video embed</h2>
+        <iframe id="youtube_example" width="560" height="315" src="https://www.youtube.com/embed/xat1GVnl8-k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="box">
+        <h2>Example for normal div</h2>
+        <div id="normal_div"></div>
+    </div>
+
+    <script type="text/javascript" src="responsive_video_scale.js"></script>
+    <script>
+        // Settings for embed youtube video
+        let defaultsVideo = { 
+            width : 560,                // default width
+            height : 315,               // default height
+            minwidth : 960,             // define min width to scale
+            maxwidth: 1300,             // define max width to scale
+            mobileBreakpoint: 480,      // define default breakpoint
+            mobileW: 480,               // default mobile width to calc ratio under breakpoint
+            mobileH: 480                // default mobile height to calc ratio under breakpoint
+        };
+        responsive_VideoScale('youtube_example',defaultsVideo);
+
+        // it's possibile to apply to a normal div that haven't default sizes
+        let defaultsDiv = { 
+            width : 630,                // default width
+            height : 380,               // default height
+            minwidth : 960,             // define min width to scale
+            maxwidth: 1300,             // define max width to scale
+            mobileBreakpoint: 480,      // define default breakpoint
+            mobileW: 480,               // default mobile width to calc ratio under breakpoint
+            mobileH: 480                // default mobile height to calc ratio under breakpoint
+        };
+        responsive_VideoScale('normal_div',defaultsDiv);
+
+        // recalc on resize
+        window.onresize = function(event) {
+            responsive_VideoScale('youtube_example',defaultsVideo);
+            responsive_VideoScale('normal_div',defaultsDiv);
+        };
+
+    </script>
+</body>
+</html>
