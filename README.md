@@ -1,4 +1,4 @@
-# 📺 Responsive Video Scale
+# 📺 videoResponsive
 -  get youtube video responsive  
 - it's possibile apply also to a normal div that haven't defined sizes by css
 - no jQuery dependecies ++
@@ -22,5 +22,5 @@ let defaults = {
 };
 
 // call the function with id and params
-responsive_VideoScale('youtube_example',defaults);
+videoResponsive('youtube_example',defaults);
 ```
