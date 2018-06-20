@@ -1,4 +1,4 @@
-let responsive_VideoScale = (element,opt) => {
+let videoResponsive = (element,opt) => {
     var player = document.getElementById(element);
         opt.ratio = opt.width/opt.height;
     if(window.innerWidth < opt.minwidth && window.innerWidth > opt.mobileBreakpoint) {
