@@ -52,7 +52,7 @@
             mobileW: 480,               // default mobile width to calc ratio under breakpoint
             mobileH: 480                // default mobile height to calc ratio under breakpoint
         };
-        responsive_VideoScale('youtube_example',defaultsVideo);
+        videoResponsive('youtube_example',defaultsVideo);
 
         // it's possibile apply also to a normal div that haven't default sizes
         let defaultsDiv = { 
@@ -64,12 +64,12 @@
             mobileW: 480,               // default mobile width to calc ratio under breakpoint
             mobileH: 480                // default mobile height to calc ratio under breakpoint
         };
-        responsive_VideoScale('normal_div',defaultsDiv);
+        videoResponsive('normal_div',defaultsDiv);
 
         // recalc on resize
         window.onresize = function(event) {
-            responsive_VideoScale('youtube_example',defaultsVideo);
-            responsive_VideoScale('normal_div',defaultsDiv);
+            videoResponsive('youtube_example',defaultsVideo);
+            videoResponsive('normal_div',defaultsDiv);
         };
 
     </script>
